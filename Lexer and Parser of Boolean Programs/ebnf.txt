@@ -1,0 +1,47 @@
+EBNF for Boolean programs: 
+
+
+program ::= {statment}.
+
+statement ::= formula TERM.
+ 
+formula ::= expression | conditional | (expression|conditional) IMPLIES formula.
+
+conditional ::= IF formula THEN formula ELSE formula | NOT conditional.
+
+expression ::= (expression|conditional) BINOP (factor|conditional).
+
+factor ::= NOT factor | CONST | ID | LPAREN formula RPAREN.
+
+BINOP ::= "AND" | "OR" | "XOR" | "EQUALS".
+
+TERM ::= ";".
+
+IF ::= "IF".
+
+THEN ::= "THEN".
+
+ELSE ::= "ELSE".
+
+IMPLIES ::= "IMPLIES".
+
+NOT ::= "NOT".
+
+CONST ::= "TRUE"|"FALSE".
+
+LPAREN ::= "(".
+
+RPAREN ::=")".
+
+ID ::= (a-zA-Z){a-zA-Z}.
+
+
+
+
+
+
+
+
+
+
+
